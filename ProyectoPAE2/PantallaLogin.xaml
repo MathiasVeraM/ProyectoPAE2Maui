@@ -3,18 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoPAE2.PantallaLogin"
              Title="PantallaLogin">
+<ScrollView>
     <VerticalStackLayout Padding="20" Spacing="10" BackgroundColor="#aed089">
         
         <!-- Logo 
         <Image Source="logo.png" HeightRequest="100" HorizontalOptions="Center" /> -->
         
-        <Label Text="Protegiendo vidas, creando familias."
-               FontSize="16"
+        <Label Text="P A E Gram"
+               FontSize="20"
                HorizontalOptions="Center"
-               TextColor="Gray" />
+               TextColor="#3a362b" />
 
         <Grid ColumnDefinitions="*,*"
               Padding="10">
+
+            <Image Source="logotipopae.png" Grid.Column="0" Grid.Row="0"/>
+            <Image Source="perrillo.png" Grid.Column="1" Grid.Row="0"/>
         </Grid>
         
         <Frame BackgroundColor="#84bc48" Padding="20">
@@ -63,4 +67,5 @@
             </VerticalStackLayout>
         </Frame>
     </VerticalStackLayout>
+</ScrollView>
 </ContentPage>
