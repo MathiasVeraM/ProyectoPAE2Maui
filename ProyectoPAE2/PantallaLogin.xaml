@@ -22,28 +22,47 @@
         
         <Frame BackgroundColor="White" Padding="20">
             <VerticalStackLayout Spacing="10">
-                
-                <Editor Placeholder="Ingrese su correo electrónico"
-                        Keyboard="Text"
-                        FontSize="16"
-                        BackgroundColor="#F2F2F2"
-                        HeightRequest="50" 
-                        x:Name="editor.Correo"/>
- 
-               <Editor Placeholder="Ingrese su contraseña"
+
+                <Label Text="Correo Electrónico"
+                       HorizontalOptions="Start"
+                       TextColor="Black"/>
+
+                <Entry Placeholder="Ingrese su correo electrónico"
+                       Keyboard="Text"
+                       FontSize="16"
+                       BackgroundColor="#F2F2F2"
+                       HeightRequest="50" 
+                       x:Name="editor_correo"/>
+
+                    <Label Text="Contraseña"
+                       HorizontalOptions="Start"
+                       TextColor="Black"/>
+
+                    <Entry Placeholder="Ingrese su contraseña"
                        IsPassword="True"
                        FontSize="16"
                        BackgroundColor="#F2F2F2"
                        HeightRequest="50" 
-                       x:Name="editor.Contraseña"/>
-    
-              <Button x:Name="BotonLogin"
-                      Text="Ingresar"
-                      BackgroundColor="#60B347"
-                      TextColor="White"
-                      HeightRequest="50"
-                      Clicked="BotonRegistrarse_Clicked"/>
-                
+                       x:Name="editor_contraseña"/>
+
+                <HorizontalStackLayout HorizontalOptions="Center">
+                    <Label Text="¿No tienes una cuenta? - "
+                           HorizontalOptions="Center"
+                           TextColor="Black">
+                    </Label>
+
+                    <Label Text="Regístrate aquí!"
+                           HorizontalOptions="Center"
+                           TextColor="Blue"
+                           FontAttributes="Bold">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnRegisterTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </HorizontalStackLayout>
+
+
+
             </VerticalStackLayout>
         </Frame>
     </VerticalStackLayout>

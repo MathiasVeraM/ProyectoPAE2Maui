@@ -21,18 +21,18 @@ public partial class PantallaRegistro : ContentPage
 
     private async void BotonRegistrarse_Clicked(object sender, EventArgs e)
     {
-		Usuario usuario = new Usuario()
-		{
-			Nombre = editor_nombre.Text,
-			Correo = editor_Correo.Text,
-			Clave = editor_Clave.Text
-		};
+        Usuario usuario = new Usuario()
+        {
+            Nombre = editor_nombre.Text,
+            Correo = editor_correo.Text,
+            Clave = editor_clave.Text
+        };
 
-		bool guardar = _usuarioRepository.CrearUsuario(usuario);
+        bool guardar = _usuarioRepository.CrearUsuario(usuario);
 
 		if (guardar)
 		{
-			await DisplayAlert("Guardado correctamente", "OK");
+			await DisplayAlert("Exito","Guardado correctamente", "OK");
 		}
     }
 }

@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoPAE2.PantallaRegistro"
-             Title="PantallaRegistro">
+             Title="Registrate">
 
 
  <VerticalStackLayout Padding="20" Spacing="10">
@@ -29,21 +29,21 @@
         <Frame BackgroundColor="White" Padding="20">
             <VerticalStackLayout Spacing="10">
 
-                <Editor Placeholder="Cree su cuenta"
+                <Entry Placeholder="Cree su cuenta"
                        x:Name="editor_nombre"
                        Keyboard="Text"
                        FontSize="16"
                        BackgroundColor="#F2F2F2"
                        HeightRequest="50" />
                 
-                <Editor Placeholder="Ingrese su correo electrónico"
+                <Entry Placeholder="Ingrese su correo electrónico"
                        x:Name="editor_correo"
                        Keyboard="Text"
                        FontSize="16"
                        BackgroundColor="#F2F2F2"
                        HeightRequest="50" />
                 
-                <Editor Placeholder="Ingrese su contraseña"
+                <Entry Placeholder="Ingrese su contraseña"
                        x:Name="editor_clave"
                        IsPassword="True"
                        FontSize="16"
@@ -51,7 +51,7 @@
                        HeightRequest="50" />
     
                 <Button x:Name="BotonRegistrarse"
-                        Text="REGISTRARSE"
+                        Text="Registrarse"
                         BackgroundColor="#60B347"
                         TextColor="White"
                         HeightRequest="50"
