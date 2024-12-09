@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoPAE2.PantallaLogin"
              Title="PantallaLogin">
-     <VerticalStackLayout Padding="20" Spacing="10">
+    <VerticalStackLayout Padding="20" Spacing="10" BackgroundColor="#aed089">
         
         <!-- Logo 
         <Image Source="logo.png" HeightRequest="100" HorizontalOptions="Center" /> -->
@@ -14,18 +14,15 @@
                TextColor="Gray" />
 
         <Grid ColumnDefinitions="*,*"
-              Padding="10"
-              BackgroundColor="White">
-            <Button Text="Iniciar Sesión" Grid.Column="0" BackgroundColor="Transparent" />
-            <Button Text="Registrarse" Grid.Column="1" BackgroundColor="Transparent" />
+              Padding="10">
         </Grid>
         
-        <Frame BackgroundColor="White" Padding="20">
+        <Frame BackgroundColor="#84bc48" Padding="20">
             <VerticalStackLayout Spacing="10">
 
                 <Label Text="Correo Electrónico"
                        HorizontalOptions="Start"
-                       TextColor="Black"/>
+                       TextColor="#3a362b"/>
 
                 <Entry Placeholder="Ingrese su correo electrónico"
                        Keyboard="Text"
@@ -36,7 +33,7 @@
 
                     <Label Text="Contraseña"
                        HorizontalOptions="Start"
-                       TextColor="Black"/>
+                       TextColor="#3a362b"/>
 
                     <Entry Placeholder="Ingrese su contraseña"
                        IsPassword="True"
@@ -48,7 +45,7 @@
                 <HorizontalStackLayout HorizontalOptions="Center">
                     <Label Text="¿No tienes una cuenta? - "
                            HorizontalOptions="Center"
-                           TextColor="Black">
+                           TextColor="#3a362b">
                     </Label>
 
                     <Label Text="Regístrate aquí!"

@@ -5,7 +5,7 @@
              Title="Registrate">
 
 
- <VerticalStackLayout Padding="20" Spacing="10">
+ <VerticalStackLayout Padding="20" Spacing="10" BackgroundColor="#aed089">
         
         <!-- Logo 
         <Image Source="logo.png" HeightRequest="100" HorizontalOptions="Center" />  -->
@@ -14,27 +14,32 @@
         <Label Text="Protegiendo vidas, creando familias."
                FontSize="16"
                HorizontalOptions="Center"
-               TextColor="Gray" />
+               TextColor="#3a362b" />
 
-        
+
         <Grid ColumnDefinitions="*,*"
               Padding="10"
-              BackgroundColor="White"
               >
-            <Button Text="Iniciar Sesión" Grid.Column="0" BackgroundColor="Transparent" />
-            <Button Text="Registrarse" Grid.Column="1" BackgroundColor="Transparent" />
         </Grid>
         
         
-        <Frame BackgroundColor="White" Padding="20">
+        <Frame BackgroundColor="#84bc48" Padding="20">
             <VerticalStackLayout Spacing="10">
 
+                <Label Text="Nombre de usuario"
+                       HorizontalOptions="Start"
+                       TextColor="#3a362b"/>
+                
                 <Entry Placeholder="Cree su cuenta"
                        x:Name="editor_nombre"
                        Keyboard="Text"
                        FontSize="16"
                        BackgroundColor="#F2F2F2"
                        HeightRequest="50" />
+                
+                <Label Text="Correo Electrónico"
+                       HorizontalOptions="Start"
+                       TextColor="#3a362b"/>
                 
                 <Entry Placeholder="Ingrese su correo electrónico"
                        x:Name="editor_correo"
@@ -43,20 +48,43 @@
                        BackgroundColor="#F2F2F2"
                        HeightRequest="50" />
                 
+                <Label Text="Contraseña"
+                       HorizontalOptions="Start"
+                       TextColor="#3a362b"/>
+
                 <Entry Placeholder="Ingrese su contraseña"
                        x:Name="editor_clave"
                        IsPassword="True"
                        FontSize="16"
                        BackgroundColor="#F2F2F2"
                        HeightRequest="50" />
-    
+                
+                <HorizontalStackLayout HorizontalOptions="Center">
+                    <Label Text="¿Ya tienes una cuenta? - "
+                           HorizontalOptions="Center"
+                           TextColor="#3a362b">
+                    </Label>
+
+                    <Label Text="Inicia sesión aquí!"
+                           HorizontalOptions="Center"
+                           TextColor="Blue"
+                           FontAttributes="Bold">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLoginTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </HorizontalStackLayout>
+                
                 <Button x:Name="BotonRegistrarse"
                         Text="Registrarse"
-                        BackgroundColor="#60B347"
+                        BackgroundColor="#374e1d"
                         TextColor="White"
                         HeightRequest="50"
                         Clicked="BotonRegistrarse_Clicked"/>
+
                 
+
+
             </VerticalStackLayout>
         </Frame>
     </VerticalStackLayout>

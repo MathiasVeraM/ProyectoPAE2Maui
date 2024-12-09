@@ -18,7 +18,10 @@ public partial class PantallaRegistro : ContentPage
 		usuario = _usuarioRepository.DevuelveInfoUsuario(1);
 		BindingContext = usuario;
 	}
-
+    private async void OnLoginTapped(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new PantallaLogin());
+    }
     private async void BotonRegistrarse_Clicked(object sender, EventArgs e)
     {
         Usuario usuario = new Usuario()
