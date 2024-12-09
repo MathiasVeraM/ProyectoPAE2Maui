@@ -22,7 +22,7 @@ namespace ProyectoPAE2.Repositories
                 File.WriteAllText(_fileName, json_data);
                 return true;
             }
-            catch(Exception e)
+            catch(Exception)
             {
                 throw;
             }
@@ -30,15 +30,22 @@ namespace ProyectoPAE2.Repositories
 
         public Usuario DevuelveInfoUsuario(int id)
         {
+            Usuario usuario = new Usuario();
             try
             {
+                if (File.Exists(_fileName))
+                {
+                    string json_data = File.ReadAllText(_fileName);
+                    usuario = JsonConvert.DeserializeObject<Usuario>(json_data);
 
+                }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
             }
-            throw new NotImplementedException();
+
+            return usuario;
         }
 
         public bool EliminarUsuario(Usuario usuario)
