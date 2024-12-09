@@ -11,15 +11,16 @@
         <Image Source="logo.png" HeightRequest="100" HorizontalOptions="Center" />  -->
         
         
-        <Label Text="Protegiendo vidas, creando familias."
-               FontSize="16"
+        <Label Text="P A E Gram"
+               FontSize="20"
                HorizontalOptions="Center"
                TextColor="#3a362b" />
 
 
         <Grid ColumnDefinitions="*,*"
-              Padding="10"
-              >
+              Padding="10">
+              <Image Source="logotipopae.png" Grid.Column="0" Grid.Row="0"/>
+              <Image Source="perrillos.png" Grid.Column="1" Grid.Row="0"/>
         </Grid>
         
         
