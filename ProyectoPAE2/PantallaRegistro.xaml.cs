@@ -14,9 +14,10 @@ public partial class PantallaRegistro : ContentPage
     public PantallaRegistro()
 	{
 		InitializeComponent();
-		_usuarioRepository = new UsuarioFilesRepository();
-		BindingContext = usuario;
-	}
+        _usuarioRepository = new UsuarioFilesRepository();
+        usuario = _usuarioRepository.DevuelveInfoUsuario(1);
+        BindingContext = usuario;
+    }
     private async void OnLoginTapped(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new PantallaLogin());

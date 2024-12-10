@@ -1,20 +1,18 @@
-
+using ProyectoPAE2;
 using ProyectoPAE2.Models;
 using ProyectoPAE2.Repositories;
-
-namespace ProyectoPAE2;
 
 public partial class PantallaLogin : ContentPage
 {
     private UsuarioFilesRepository _usuarioRepository;
     public PantallaLogin()
-	{
-		InitializeComponent();
-		_usuarioRepository = new UsuarioFilesRepository();
-	}
+    {
+        InitializeComponent();
+        _usuarioRepository = new UsuarioFilesRepository();
+    }
 
-	private async void OnRegisterTapped(object sender, EventArgs e)
-	{
+    private async void OnRegisterTapped(object sender, EventArgs e)
+    {
         await Navigation.PushAsync(new PantallaRegistro());
     }
 
@@ -31,19 +29,29 @@ public partial class PantallaLogin : ContentPage
 
         try
         {
-            Usuario usuario = _usuarioRepository.BuscarUsuarioPorCorreoYClave(correo, clave);
+            Usuario usuario = _usuarioRepository.DevuelveInfoUsuario(1);
 
             if (usuario == null)
+            {
+                await DisplayAlert("Error", "No se encontró ningún usuario registrado.", "OK");
+                return;
+            }
+
+            if (usuario.Correo == correo && usuario.Clave == clave)
+            {
+                await Navigation.PushAsync(new MainPage());
+            }
+            else
             {
                 await DisplayAlert("Error", "La clave o correo son incorrectos", "OK");
                 return;
             }
 
-            await Navigation.PushAsync(new MainPage());
         }
         catch (Exception)
         {
             throw;
         }
+
     }
 }

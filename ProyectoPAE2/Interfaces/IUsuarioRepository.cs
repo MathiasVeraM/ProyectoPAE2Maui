@@ -12,8 +12,6 @@ namespace ProyectoPAE2.Interfaces
         bool CrearUsuario(Usuario usuario);
         bool ActualizarUsuario(Usuario usuario);
         bool EliminarUsuario(int id);
-        IEnumerable<Usuario> DevuelveListaUsuarios();
         Usuario DevuelveInfoUsuario(int id);
-        Usuario BuscarUsuarioPorCorreoYClave(string correo, string clave);
     }
 }
