@@ -4,26 +4,36 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:ProyectoPAE2"
-    Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent 
-        Route="LoginPage" 
-        ContentTemplate="{DataTemplate local:PantallaLogin}" 
-        Title="Login" />
+    Title="ProyectoPAE2">
 
-    <ShellContent 
-        Route="RegisterPage" 
-        ContentTemplate="{DataTemplate local:PantallaRegistro}" 
-        Title="Register" />
+    <ShellContent   Title="Login"
+                    ContentTemplate="{DataTemplate local:PantallaLogin}"
+                    Route="MainPage" />
 
-    <!-- TabBar principal -->
-    <TabBar x:Name="MainTabBar" IsVisible="False">
-        <Tab Title="Home">
-            <ShellContent 
-                ContentTemplate="{DataTemplate local:MainPage}" 
-                Title="Home" />
-        </Tab>
-        
-    </TabBar>
+    <FlyoutItem Title="Home" FlyoutIcon="home.png">
+        <ShellContent   Title="Home"
+                        ContentTemplate="{DataTemplate local:MainPage}"
+                        Route="MainPage" />
+    </FlyoutItem>
+    
+    <FlyoutItem Title="Nueva Publicacion" FlyoutIcon="publicacion.png">
+        <ShellContent   Title="Nueva Publicacion"
+                        ContentTemplate="{DataTemplate local:PantallaPublicaciones}"
+                        Route="MainPage" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Acerca de Nosotros" FlyoutIcon="about_us.png">
+        <ShellContent   Title="Acerca de nosotros"
+                    ContentTemplate="{DataTemplate local:AboutUs}"
+                    Route="MainPage" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Cerrar Sesion" FlyoutIcon="cerrar_sesion.png">
+        <ShellContent   Title="Cerrar Sesion"
+                        ContentTemplate="{DataTemplate local:PantallaLogin}"
+                        Route="MainPage" /> 
+    </FlyoutItem>
+
 
 </Shell>
