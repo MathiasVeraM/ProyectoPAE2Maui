@@ -4,12 +4,26 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:ProyectoPAE2"
-    Shell.FlyoutBehavior="Disabled"
-    Title="ProyectoPAE2">
+    Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:PantallaLogin}"
-        Route="MainPage" />
+    <ShellContent 
+        Route="LoginPage" 
+        ContentTemplate="{DataTemplate local:PantallaLogin}" 
+        Title="Login" />
+
+    <ShellContent 
+        Route="RegisterPage" 
+        ContentTemplate="{DataTemplate local:PantallaRegistro}" 
+        Title="Register" />
+
+    <!-- TabBar principal -->
+    <TabBar x:Name="MainTabBar" IsVisible="False">
+        <Tab Title="Home">
+            <ShellContent 
+                ContentTemplate="{DataTemplate local:MainPage}" 
+                Title="Home" />
+        </Tab>
+        
+    </TabBar>
 
 </Shell>

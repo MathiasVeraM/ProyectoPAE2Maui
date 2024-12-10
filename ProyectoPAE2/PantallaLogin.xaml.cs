@@ -40,6 +40,15 @@ public partial class PantallaLogin : ContentPage
             if (usuario.Correo == correo && usuario.Clave == clave)
             {
                 await Navigation.PushAsync(new MainPage());
+
+                if (Shell.Current is AppShell appShell)
+                {
+                    await appShell.ShowMainPageAsync();
+                }
+                else
+                {
+                    await DisplayAlert("Error", "No se pudo redirigir a la página principal.", "OK");
+                }
             }
             else
             {

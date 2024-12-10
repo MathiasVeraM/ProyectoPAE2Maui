@@ -5,6 +5,15 @@
         public AppShell()
         {
             InitializeComponent();
+            GoToAsync("//PantallaLogin");
+        }
+
+        public async Task ShowMainPageAsync()
+        {
+            CurrentItem = MainTabBar;
+            MainTabBar.IsVisible = true;
+
+            await GoToAsync("//MainPage");
         }
     }
 }
