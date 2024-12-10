@@ -62,12 +62,12 @@
                     </Label>
                 </HorizontalStackLayout>
 
-                    <Button x:Name="BotonLogin"
-                            Text="Iniciar sesion"
-                            BackgroundColor="#374e1d"
-                            TextColor="White"
-                            HeightRequest="50"
-                            Clicked="BotonLogin_Clicked"/>
+                <Button x:Name="BotonLogin"
+                        Text="Iniciar sesion"
+                        BackgroundColor="#374e1d"
+                        TextColor="White"
+                        HeightRequest="50"
+                        Clicked="BotonLogin_Clicked"/>
 
 
                 </VerticalStackLayout>
