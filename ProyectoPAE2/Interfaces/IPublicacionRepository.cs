@@ -12,6 +12,6 @@ namespace ProyectoPAE2.Interfaces
         bool CrearPublicacion(Publicacion publicacion);
         bool ActualizarPublicacion(Publicacion publicacion);
         bool EliminarPublicacion(int id);
-        Publicacion DevuelveInfoPublicacion(int id);
+        List<Publicacion> DevuelveInfoPublicacion(int id);
     }
 }

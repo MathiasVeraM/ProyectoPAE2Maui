@@ -40,7 +40,7 @@ public partial class PantallaLogin : ContentPage
 
             if (usuario.Correo == correo && usuario.Clave == clave)
             {
-                await Navigation.PushAsync(new PantallaPublicaciones());
+                await Navigation.PushAsync(new MainPage());
             }
             else
             {
