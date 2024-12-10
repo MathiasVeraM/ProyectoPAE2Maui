@@ -22,6 +22,12 @@
                         Route="MainPage" />
     </FlyoutItem>
 
+    <FlyoutItem Title="Acerca de Nosotros" FlyoutIcon="about_us.png">
+        <ShellContent   Title="Acerca de nosotros"
+                    ContentTemplate="{DataTemplate local:AboutUs}"
+                    Route="MainPage" />
+    </FlyoutItem>
+
     <FlyoutItem Title="Cerrar Sesion" FlyoutIcon="cerrar_sesion.png">
         <ShellContent   Title="Cerrar Sesion"
                         ContentTemplate="{DataTemplate local:PantallaLogin}"
