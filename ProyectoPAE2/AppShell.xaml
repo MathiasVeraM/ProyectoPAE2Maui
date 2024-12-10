@@ -6,19 +6,23 @@
     xmlns:local="clr-namespace:ProyectoPAE2"
     Title="ProyectoPAE2">
 
-    <FlyoutItem Title="Home" FlyoutIcon="dotnet_bot.png">
+    <ShellContent   Title="Login"
+                    ContentTemplate="{DataTemplate local:PantallaLogin}"
+                    Route="MainPage" />
+
+    <FlyoutItem Title="Home" FlyoutIcon="home.png">
         <ShellContent   Title="Home"
                         ContentTemplate="{DataTemplate local:MainPage}"
                         Route="MainPage" />
     </FlyoutItem>
     
-    <FlyoutItem Title="Nueva Publicacion" FlyoutIcon="dotnet_bot.png">
+    <FlyoutItem Title="Nueva Publicacion" FlyoutIcon="publicacion.png">
         <ShellContent   Title="Nueva Publicacion"
                         ContentTemplate="{DataTemplate local:PantallaPublicaciones}"
                         Route="MainPage" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Cerrar Sesion" FlyoutIcon="dotnet_bot.png">
+    <FlyoutItem Title="Cerrar Sesion" FlyoutIcon="cerrar_sesion.png">
         <ShellContent   Title="Cerrar Sesion"
                         ContentTemplate="{DataTemplate local:PantallaLogin}"
                         Route="MainPage" /> 
