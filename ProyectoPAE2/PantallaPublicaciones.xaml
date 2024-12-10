@@ -3,32 +3,52 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoPAE2.PantallaPublicaciones"
              Title="PantallaPublicaciones">
+<ScrollView>
+
+    
     <VerticalStackLayout Padding="20" Spacing="15">
         <Label Text="Crear Publicación"
                    FontSize="24"
                    FontAttributes="Bold"
                    HorizontalOptions="Center"
-                   TextColor="Black" />
+                   TextColor="#3a362b" />
 
             <Frame BackgroundColor="#F0F0F0"
                    HeightRequest="200"
                    HorizontalOptions="Fill">
                 <Image x:Name="MascotaImagen"
-                       Aspect="AspectFill"
+                       Aspect="Fill"
                        VerticalOptions="Center"
                        HorizontalOptions="Center" />
             </Frame>
+            
             <Button Text="Seleccionar Imagen"
                     Clicked="SeleccionarImagenClicked"
-                    BackgroundColor="#A9D08E"
+                    BackgroundColor="#374e1d"
                     TextColor="White" />
 
+            <Label Text="Nombre de la mascota"
+                   FontSize="16"
+                   HorizontalOptions="Start"
+                   TextColor="#3a362b"/>
+
+            <Entry x:Name="NombreEntry"
+                   Placeholder="Nombre"
+                   FontSize="16" />
+        
+            <Label Text="Raza de la mascota"
+                   FontSize="16"
+                   HorizontalOptions="Start"
+                   TextColor="#3a362b"/>
+        
             <Entry x:Name="RazaEntry"
                    Placeholder="Raza"
                    FontSize="16" />
 
             <Picker x:Name="SexoPicker"
-                    Title="Sexo">
+                    Title="Sexo"
+                    FontSize="16"
+                    TextColor="#3a362b">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Macho</x:String>
@@ -37,10 +57,20 @@
                 </Picker.ItemsSource>
             </Picker>
 
+            <Label Text="Edad de la mascota"
+                   FontSize="16"
+                   HorizontalOptions="Start"
+                   TextColor="#3a362b"/>
+
             <Entry x:Name="EdadEntry"
                    Placeholder="Edad (en años)"
                    Keyboard="Numeric"
                    FontSize="16" />
+
+            <Label Text="Peso de la mascota"
+                   FontSize="16"
+                   HorizontalOptions="Start"
+                   TextColor="#3a362b"/>
 
             <Entry x:Name="PesoEntry"
                    Placeholder="Peso (en kg)"
@@ -48,7 +78,9 @@
                    FontSize="16" />
 
             <Picker x:Name="TamañoPicker"
-                    Title="Tamaño">
+                    Title="Tamaño"
+                    FontSize="16"
+                    TextColor="#3a362b">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Pequeño</x:String>
@@ -59,7 +91,9 @@
             </Picker>
 
             <Picker x:Name="EsterilizacionPicker"
-                    Title="¿Esterilizado?">
+                    Title="¿Esterilizado?"
+                    FontSize="16"
+                    TextColor="#3a362b">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Sí</x:String>
@@ -68,9 +102,19 @@
                 </Picker.ItemsSource>
             </Picker>
 
+            <Label Text="Enfermedades de la mascota"
+                    FontSize="16"
+                    HorizontalOptions="Start"
+                    TextColor="#3a362b"/>
+
             <Entry x:Name="EnfermedadesEntry"
                    Placeholder="Enfermedades"
                    FontSize="16" />
+
+            <Label Text="Descripcion del comportamiento de la mascota"
+                   FontSize="16"
+                   HorizontalOptions="Start"
+                   TextColor="#3a362b"/>
 
             <Editor x:Name="DescripcionEditor"
                     Placeholder="Descripción del comportamiento"
@@ -79,8 +123,9 @@
 
             <Button Text="Guardar Publicación"
                     Clicked="GuardarPublicacionClicked"
-                    BackgroundColor="#4CAF50"
+                    BackgroundColor="#374e1d"
                     TextColor="White"
                     FontAttributes="Bold" />
     </VerticalStackLayout>
+</ScrollView>
 </ContentPage>
