@@ -1,20 +1,18 @@
-
+using ProyectoPAE2;
 using ProyectoPAE2.Models;
 using ProyectoPAE2.Repositories;
-
-namespace ProyectoPAE2;
 
 public partial class PantallaLogin : ContentPage
 {
     private UsuarioFilesRepository _usuarioRepository;
     public PantallaLogin()
-	{
-		InitializeComponent();
-		_usuarioRepository = new UsuarioFilesRepository();
-	}
+    {
+        InitializeComponent();
+        _usuarioRepository = new UsuarioFilesRepository();
+    }
 
-	private async void OnRegisterTapped(object sender, EventArgs e)
-	{
+    private async void OnRegisterTapped(object sender, EventArgs e)
+    {
         await Navigation.PushAsync(new PantallaRegistro());
     }
 
@@ -23,7 +21,7 @@ public partial class PantallaLogin : ContentPage
         string correo = editor_correo.Text;
         string clave = editor_contraseña.Text;
 
-        if(string.IsNullOrEmpty(correo) || string.IsNullOrEmpty(clave))
+        if (string.IsNullOrEmpty(correo) || string.IsNullOrEmpty(clave))
         {
             await DisplayAlert("Error", "Deben ingresarse datos para iniciar sesión", "OK");
             return;
@@ -33,7 +31,8 @@ public partial class PantallaLogin : ContentPage
         {
             Usuario usuario = _usuarioRepository.DevuelveInfoUsuario(1);
 
-            if (usuario == null) {
+            if (usuario == null)
+            {
                 await DisplayAlert("Error", "No se encontró ningún usuario registrado.", "OK");
                 return;
             }
@@ -41,6 +40,15 @@ public partial class PantallaLogin : ContentPage
             if (usuario.Correo == correo && usuario.Clave == clave)
             {
                 await Navigation.PushAsync(new MainPage());
+
+                if (Shell.Current is AppShell appShell)
+                {
+                    await appShell.ShowMainPageAsync();
+                }
+                else
+                {
+                    await DisplayAlert("Error", "No se pudo redirigir a la página principal.", "OK");
+                }
             }
             else
             {
@@ -53,6 +61,6 @@ public partial class PantallaLogin : ContentPage
         {
             throw;
         }
-        
+
     }
 }
