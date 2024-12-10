@@ -22,7 +22,7 @@ namespace ProyectoPAE2.Repositories
                 File.WriteAllText(_fileName, json_data);
                 return true;
             }
-            catch(Exception)
+            catch (Exception)
             {
                 throw;
             }
