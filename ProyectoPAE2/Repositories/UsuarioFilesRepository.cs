@@ -48,7 +48,7 @@ namespace ProyectoPAE2.Repositories
             return usuario;
         }
 
-        public bool EliminarUsuario(Usuario usuario)
+        public bool EliminarUsuario(int id)
         {
             throw new NotImplementedException();
         }

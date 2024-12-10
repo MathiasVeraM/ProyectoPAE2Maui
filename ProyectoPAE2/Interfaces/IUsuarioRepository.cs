@@ -11,8 +11,7 @@ namespace ProyectoPAE2.Interfaces
     {
         bool CrearUsuario(Usuario usuario);
         bool ActualizarUsuario(Usuario usuario);
-        bool EliminarUsuario(Usuario usuario);
+        bool EliminarUsuario(int id);
         Usuario DevuelveInfoUsuario(int id);
-
     }
 }

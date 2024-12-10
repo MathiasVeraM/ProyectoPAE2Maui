@@ -6,8 +6,6 @@
 <ScrollView>
     <VerticalStackLayout Padding="20" Spacing="10" BackgroundColor="#aed089">
         
-        <!-- Logo 
-        <Image Source="logo.png" HeightRequest="100" HorizontalOptions="Center" /> -->
         
         <Label Text="P A E Gram"
                FontSize="20"

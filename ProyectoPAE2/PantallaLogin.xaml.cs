@@ -40,13 +40,14 @@ public partial class PantallaLogin : ContentPage
 
             if (usuario.Correo == correo && usuario.Clave == clave)
             {
-                await Navigation.PushAsync(new MainPage());
-            } 
+                await Navigation.PushAsync(new PantallaPublicaciones());
+            }
             else
             {
                 await DisplayAlert("Error", "La clave o correo son incorrectos", "OK");
                 return;
             }
+
         }
         catch (Exception)
         {
