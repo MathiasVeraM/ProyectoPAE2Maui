@@ -24,6 +24,7 @@
             
             <Button Text="Seleccionar Imagen"
                     Clicked="SeleccionarImagenClicked"
+                    HorizontalOptions="Fill"
                     BackgroundColor="#374e1d"
                     TextColor="White" />
 
@@ -123,6 +124,7 @@
 
             <Button Text="Guardar Publicación"
                     Clicked="GuardarPublicacionClicked"
+                    HorizontalOptions="Fill"
                     BackgroundColor="#374e1d"
                     TextColor="White"
                     FontAttributes="Bold" />

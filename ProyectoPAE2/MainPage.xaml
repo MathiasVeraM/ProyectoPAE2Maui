@@ -5,28 +5,23 @@
 
     <ScrollView>
         <VerticalStackLayout Padding="30,0" Spacing="20">
-            <!-- Título -->
             <Label Text="Publicaciones"
                    FontSize="24"
                    FontAttributes="Bold"
                    HorizontalOptions="Center"
                    TextColor="#3a362b" />
 
-            <!-- CollectionView para las publicaciones -->
             <CollectionView x:Name="PublicacionesCollectionView" ItemsSource="{Binding Publicaciones}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Frame BorderColor="#374e1d" CornerRadius="10" Padding="10" Margin="10">
                             <VerticalStackLayout>
-                                <!-- Imagen de la mascota (placeholder si no se tiene imagen) -->
                                 <Image Source="{Binding ImagenUrl}" Aspect="Fill" HeightRequest="200" />
 
-                                <!-- Detalles de la publicación -->
                                 <Label Text="{Binding NombreMascota}" FontSize="18" FontAttributes="Bold" TextColor="#3a362b" />
                                 <Label Text="{Binding Raza}" FontSize="14" TextColor="#3a362b" />
                                 <Label Text="{Binding Comportamiento}" FontSize="12" TextColor="#3a362b" />
 
-                                <!-- Otros detalles -->
                                 <StackLayout Orientation="Horizontal" Spacing="15">
                                     <Label Text="{Binding Edad}" FontSize="12" TextColor="#3a362b" />
                                     <Label Text="{Binding Peso}" FontSize="12" TextColor="#3a362b" />
@@ -44,7 +39,9 @@
                     Text="Nueva Publicacion"
                     Clicked="NuevaPublicacion_Clicked"
                     HorizontalOptions="Fill" 
-                    />
+                    BackgroundColor="#374e1d"
+                    TextColor="White"
+                    HeightRequest="50"/>
         </VerticalStackLayout>
     </ScrollView>
 

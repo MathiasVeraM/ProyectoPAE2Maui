@@ -75,6 +75,7 @@
                 
                 <Button x:Name="BotonRegistrarse"
                         Text="Registrarse"
+                        HorizontalOptions="Fill"
                         BackgroundColor="#374e1d"
                         TextColor="White"
                         HeightRequest="50"
