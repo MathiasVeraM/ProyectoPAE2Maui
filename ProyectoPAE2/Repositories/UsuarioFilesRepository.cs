@@ -42,7 +42,7 @@ namespace ProyectoPAE2.Repositories
             throw new NotImplementedException();
         }
 
-        public List<Usuario> DevuelveListaUsuarios()
+        public IEnumerable<Usuario> DevuelveListaUsuarios()
         {
             if (!File.Exists(_fileName))
                 return new List<Usuario>();
