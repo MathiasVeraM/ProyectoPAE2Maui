@@ -25,9 +25,10 @@ public partial class PantallaPublicaciones : ContentPage
                 MascotaImagen.Source = ImageSource.FromStream(() => stream);
             }
         }
-        catch (Exception ex)
+        catch (Exception)
         {
-            await DisplayAlert("Error", $"No se pudo seleccionar la imagen: {ex.Message}", "OK");
+            await DisplayAlert("Error", "No se pudo seleccionar la imagen", "OK");
+            throw;
         }
     }
 
