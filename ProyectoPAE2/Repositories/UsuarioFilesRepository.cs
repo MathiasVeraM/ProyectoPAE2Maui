@@ -14,12 +14,21 @@ namespace ProyectoPAE2.Repositories
             throw new NotImplementedException();
         }
 
+        public Usuario BuscarUsuarioPorCorreoYClave(string correo, string clave)
+        {
+            var usuarios = DevuelveListaUsuarios();
+            return usuarios.FirstOrDefault(u => u.Correo == correo && u.Clave == clave);
+        }
+
         public bool CrearUsuario(Usuario usuario)
         {
             try
             {
-                string json_data = JsonConvert.SerializeObject(usuario);
-                File.WriteAllText(_fileName, json_data);
+                List<Usuario> usuarios = DevuelveListaUsuarios().ToList();
+                usuarios.Add(usuario);
+
+                string jsonData = JsonConvert.SerializeObject(usuarios, Formatting.Indented);
+                File.WriteAllText(_fileName, jsonData);
                 return true;
             }
             catch (Exception)
@@ -30,22 +39,23 @@ namespace ProyectoPAE2.Repositories
 
         public Usuario DevuelveInfoUsuario(int id)
         {
-            Usuario usuario = new Usuario();
+            throw new NotImplementedException();
+        }
+
+        public List<Usuario> DevuelveListaUsuarios()
+        {
+            if (!File.Exists(_fileName))
+                return new List<Usuario>();
+
             try
             {
-                if (File.Exists(_fileName))
-                {
-                    string json_data = File.ReadAllText(_fileName);
-                    usuario = JsonConvert.DeserializeObject<Usuario>(json_data);
-
-                }
+                string jsonData = File.ReadAllText(_fileName);
+                return JsonConvert.DeserializeObject<List<Usuario>>(jsonData) ?? new List<Usuario>();
             }
             catch (Exception)
             {
                 throw;
             }
-
-            return usuario;
         }
 
         public bool EliminarUsuario(int id)
