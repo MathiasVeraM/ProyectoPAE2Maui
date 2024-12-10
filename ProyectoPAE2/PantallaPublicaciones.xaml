@@ -3,10 +3,84 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoPAE2.PantallaPublicaciones"
              Title="PantallaPublicaciones">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+    <VerticalStackLayout Padding="20" Spacing="15">
+        <Label Text="Crear Publicación"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="Black" />
+
+            <Frame BackgroundColor="#F0F0F0"
+                   HeightRequest="200"
+                   HorizontalOptions="Fill">
+                <Image x:Name="MascotaImagen"
+                       Aspect="AspectFill"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center" />
+            </Frame>
+            <Button Text="Seleccionar Imagen"
+                    Clicked="SeleccionarImagenClicked"
+                    BackgroundColor="#A9D08E"
+                    TextColor="White" />
+
+            <Entry x:Name="RazaEntry"
+                   Placeholder="Raza"
+                   FontSize="16" />
+
+            <Picker x:Name="SexoPicker"
+                    Title="Sexo">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Macho</x:String>
+                        <x:String>Hembra</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Entry x:Name="EdadEntry"
+                   Placeholder="Edad (en años)"
+                   Keyboard="Numeric"
+                   FontSize="16" />
+
+            <Entry x:Name="PesoEntry"
+                   Placeholder="Peso (en kg)"
+                   Keyboard="Numeric"
+                   FontSize="16" />
+
+            <Picker x:Name="TamañoPicker"
+                    Title="Tamaño">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Pequeño</x:String>
+                        <x:String>Mediano</x:String>
+                        <x:String>Grande</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Picker x:Name="EsterilizacionPicker"
+                    Title="¿Esterilizado?">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Sí</x:String>
+                        <x:String>No</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Entry x:Name="EnfermedadesEntry"
+                   Placeholder="Enfermedades"
+                   FontSize="16" />
+
+            <Editor x:Name="DescripcionEditor"
+                    Placeholder="Descripción del comportamiento"
+                    FontSize="16"
+                    HeightRequest="100" />
+
+            <Button Text="Guardar Publicación"
+                    Clicked="GuardarPublicacionClicked"
+                    BackgroundColor="#4CAF50"
+                    TextColor="White"
+                    FontAttributes="Bold" />
     </VerticalStackLayout>
 </ContentPage>
